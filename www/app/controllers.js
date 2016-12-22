@@ -167,9 +167,9 @@ myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
             }
             if (field.name.match(/repeat/i)) {
               item.repetir = field.values[0];
-              if (item.repetir === 'Sí') {bucketSi++;}
+              if (item.repetir === 'Yes') {bucketSi++;}
               else if (item.repetir === 'No') {bucketNo++;}
-              else if (item.repetir === 'Indeciso') {bucketIndeciso++;}
+              else if (item.repetir === 'I don\'t know') {bucketIndeciso++;}
             }
             if (field.name.match(/comments/i)) {
               item.comentarios = field.values[0];
