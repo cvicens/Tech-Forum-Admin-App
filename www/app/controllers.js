@@ -4,9 +4,9 @@ var myApp = angular.module('myApp.controllers', ['fhcloud', 'chart.js']);
 
 myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
   $scope.options = {legend: {display: true}};
-  $scope.experienciaLabels = ["Excelente", "Buena", "Regular", "Mala", "Pésima"];
+  $scope.experienciaLabels = ["Excellent", "Good", "Average", "Fair", "Poor"];
   $scope.experienciaData = [];
-  $scope.repetirLabels = ["Sí", "No", "Indeciso"];
+  $scope.repetirLabels = ["Yes", "No", "I don't know"];
   $scope.repetirData = [];
 
   // function to evaluate if a number is even
@@ -84,19 +84,19 @@ myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
             for (var j = 0; j < item.fields.length; j++) {
               var field = item.fields[j];
               //console.log(JSON.stringify(field));
-              if (field.name.match(/experiencia/i)) {
+              if (field.name.match(/experience/i)) {
                 item.experiencia = field.values[0];
-                if (item.experiencia === 'Excelente') {bucketExcelente++;}
-                else if (item.experiencia === 'Buena') {bucketBuena++;}
-                else if (item.experiencia === 'Regular') {bucketRegular++;}
-                else if (item.experiencia === 'Mala') {bucketMala++;}
-                else if (item.experiencia === 'Pésima') {bucketPesima++;}
+                if (item.experiencia === 'Excellent') {bucketExcelente++;}
+                else if (item.experiencia === 'Good') {bucketBuena++;}
+                else if (item.experiencia === 'Average') {bucketRegular++;}
+                else if (item.experiencia === 'Fair') {bucketMala++;}
+                else if (item.experiencia === 'Poor') {bucketPesima++;}
               }
               if (field.name.match(/repetir/i)) {
                 item.repetir = field.values[0];
-                if (item.repetir === 'Sí') {bucketSi++;}
+                if (item.repetir === 'Yes') {bucketSi++;}
                 else if (item.repetir === 'No') {bucketNo++;}
-                else if (item.repetir === 'Indeciso') {bucketIndeciso++;}
+                else if (item.repetir === 'I don\'t Know') {bucketIndeciso++;}
               }
               if (field.name.match(/comentarios/i)) {
                 item.comentarios = field.values[0];
@@ -124,9 +124,9 @@ myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
 })
 .controller('DashboardCtrl', ['$scope', '$q', 'fhcloud', function($scope, $q, fhcloud) {
   $scope.options = {legend: {display: true}};
-  $scope.experienciaLabels = ["Excelente", "Buena", "Regular", "Mala", "Pésima"];
+  $scope.experienciaLabels = ["Excellent", "Good", "Average", "Fair", "Poor"];
   $scope.experienciaData = [];
-  $scope.repetirLabels = ["Sí", "No", "Indeciso"];
+  $scope.repetirLabels = ["Yes", "No", "I don\'t know"];
   $scope.repetirData = [];
 
   $scope.listSubmissions = function() {
@@ -159,11 +159,11 @@ myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
             //console.log(JSON.stringify(field));
             if (field.name.match(/experiencia/i)) {
               item.experiencia = field.values[0];
-              if (item.experiencia === 'Excelente') {bucketExcelente++;}
-              else if (item.experiencia === 'Buena') {bucketBuena++;}
-              else if (item.experiencia === 'Regular') {bucketRegular++;}
-              else if (item.experiencia === 'Mala') {bucketMala++;}
-              else if (item.experiencia === 'Pésima') {bucketPesima++;}
+              if (item.experiencia === 'Excellent') {bucketExcelente++;}
+              else if (item.experiencia === 'Good') {bucketBuena++;}
+              else if (item.experiencia === 'Average') {bucketRegular++;}
+              else if (item.experiencia === 'Fair') {bucketMala++;}
+              else if (item.experiencia === 'Poor') {bucketPesima++;}
             }
             if (field.name.match(/repetir/i)) {
               item.repetir = field.values[0];
