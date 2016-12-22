@@ -92,13 +92,13 @@ myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
                 else if (item.experiencia === 'Fair') {bucketMala++;}
                 else if (item.experiencia === 'Poor') {bucketPesima++;}
               }
-              if (field.name.match(/repetir/i)) {
+              if (field.name.match(/repeat/i)) {
                 item.repetir = field.values[0];
                 if (item.repetir === 'Yes') {bucketSi++;}
                 else if (item.repetir === 'No') {bucketNo++;}
                 else if (item.repetir === 'I don\'t Know') {bucketIndeciso++;}
               }
-              if (field.name.match(/comentarios/i)) {
+              if (field.name.match(/comments/i)) {
                 item.comentarios = field.values[0];
               }
             }
@@ -157,7 +157,7 @@ myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
           for (var j = 0; j < item.fields.length; j++) {
             var field = item.fields[j];
             //console.log(JSON.stringify(field));
-            if (field.name.match(/experiencia/i)) {
+            if (field.name.match(/experience/i)) {
               item.experiencia = field.values[0];
               if (item.experiencia === 'Excellent') {bucketExcelente++;}
               else if (item.experiencia === 'Good') {bucketBuena++;}
@@ -165,13 +165,13 @@ myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
               else if (item.experiencia === 'Fair') {bucketMala++;}
               else if (item.experiencia === 'Poor') {bucketPesima++;}
             }
-            if (field.name.match(/repetir/i)) {
+            if (field.name.match(/repeat/i)) {
               item.repetir = field.values[0];
               if (item.repetir === 'Sí') {bucketSi++;}
               else if (item.repetir === 'No') {bucketNo++;}
               else if (item.repetir === 'Indeciso') {bucketIndeciso++;}
             }
-            if (field.name.match(/comentarios/i)) {
+            if (field.name.match(/comments/i)) {
               item.comentarios = field.values[0];
             }
           }
