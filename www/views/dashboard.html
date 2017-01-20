@@ -1,0 +1,58 @@
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+      </button>
+      <div class="row top-buffer">
+        <div class="col-sm-12" style="float: none; margin: 0 auto;">
+          <img href="#page-top" src="./images/admin-portal-355x105-logo.png" class="img-thumbnail" alt="Red Hat Logo" width="355" height="105">
+        </div>
+      </div>
+  </div>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="hidden">
+                <a href="#page-top"></a>
+            </li>
+            <li class="page-scroll">
+                <a href="#about">About</a>
+            </li>
+            <li class="page-scroll">
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+
+    <div class="row top-buffer">
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Experience</div>
+          <div class="panel-body">
+            <canvas class="chart chart-pie"
+              chart-data="experienciaData" chart-labels="experienciaLabels" chart-options="options"
+              chart-click="showSubmissions()">
+            </canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Would you repeat?</div>
+          <div class="panel-body">
+            <canvas class="chart chart-pie"
+              chart-data="repetirData" chart-labels="repetirLabels" chart-options="options">
+            </canvas>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</nav>

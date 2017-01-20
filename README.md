@@ -1,5 +1,5 @@
 fh-advanced-webapp-blank-app
-============================
+
 Author: Erik Jan de Wit   
 Level: Intermediate   
 Technologies: Javascript, RHMAP   
@@ -7,8 +7,8 @@ Summary: An advanced web application template to use with RHMAP.
 Community Project: [FeedHenry](http://feedhenry.org)   
 Target Product: RHMAP   
 Product Versions: RHMAP 3.8.0+   
-Source: https://github.com/feedhenry/fh-advanced-webapp-blank-app 
-Prerequisites: fh-js-sdk : 2.14.+ 
+Source: https://github.com/feedhenry/fh-advanced-webapp-blank-app
+Prerequisites: fh-js-sdk : 2.14.+
 
 ## What is it?
 
@@ -42,7 +42,7 @@ The `fh-js-sdk` and other development dependencies are defined in [package.json]
 
 * This generated [main.js](public/main.js) file is checked-in to allow RHMAP studio preview to statically serve dependencies.
 
-* The [init.js](public/init.js) file is browserified and acts as a bridge between template script and npm dependencies. 
+* The [init.js](public/init.js) file is browserified and acts as a bridge between template script and npm dependencies.
 
 * All the other JavaScript files in the template app will not be browserified, in order for you to be able to experiment live edit in RHMAP Studio preview.
 

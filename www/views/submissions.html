@@ -1,0 +1,97 @@
+<!--<fhheader title="FeedHenry" subtext="QuickStart"></fhheader>-->
+
+<section id="example">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="row-fluid">
+          <div class="span6">
+            <!--<div class="panel panel-default">
+              <div class="panel-heading">Experiencia</div>
+              <div class="panel-body">
+                <canvas class="chart chart-pie"
+                  chart-data="experienciaData" chart-labels="experienciaLabels" chart-options="options">
+                </canvas>
+              </div>
+            </div>-->
+          </div>
+          <div class="span6">
+            <!--<div class="panel panel-default">
+              <div class="panel-heading">Repetiría</div>
+              <div class="panel-body">
+                <canvas class="chart chart-pie"
+                  chart-data="repetirData" chart-labels="repetirLabels" chart-options="options">
+                </canvas>
+              </div>
+            </div>
+          </div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Table -->
+  <table class="table">
+    <tr >
+      <td class="span6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Experience</div>
+          <div class="panel-body">
+            <canvas class="chart chart-pie"
+              chart-data="experienciaData" chart-labels="experienciaLabels" chart-options="options">
+            </canvas>
+          </div>
+        </div>
+      </td>
+      <td class="span6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Would you repeat?</div>
+          <div class="panel-body">
+            <canvas class="chart chart-pie"
+              chart-data="repetirData" chart-labels="repetirLabels" chart-options="options">
+            </canvas>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+    <div id="formWrapper">
+
+
+
+
+        <h1>Hit the button to get submissions</h1>
+        <!--<div class="input-group input-group">
+            <input type="text" class="form-control" ng-model="userInput" placeholder="Enter your name here.">
+        </div>-->
+        <button type="button" class="btn btn-primary btn-block" ng-click="listSubmissions()">List Submissions</button>
+
+        <div class="panel panel-default" ng-show="showSubmissionsPanel()">
+          <!-- Default panel contents -->
+          <div class="panel-heading">Submissions</div>
+
+          <!-- Table -->
+          <table class="table">
+            <tr>
+               <th>ID</th>
+               <th>Form Name</th>
+               <th>Experience</th>
+               <th>Repeat</th>
+               <th>Comentarios</th>
+            </tr>
+
+            <tr ng-repeat = "item in items">
+               <td>{{ item._id }} <span ng-show="item.severity == 'Urgent' || item.severity == 'Critical'" class="glyphicon glyphicon-star" aria-hidden="true"></span></td>
+               <td>{{ item.formName }}</td>
+               <td>{{ item.experiencia }}</td>
+               <td>{{ item.repetir }}</td>
+               <td>{{ item.comentarios }}</td>
+            </tr>
+          </table>
+        </div>
+
+        <div ng-show="noticeMessage" class="text-center jumbotron hello-result {{textClassName}}">{{noticeMessage}}</div>
+    </div>
+</section>
+
+<!--<fhfooter></fhfooter>-->

@@ -1,0 +1,30 @@
+{
+  "name": "quickstart-ionic-app",
+  "description": "Just a starting point",
+  "main": "application.js",
+  "license": "mit",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2",
+    "angular-resource": "1.2",
+    "angular-route": "^1.5.5",
+    "angular-sanitize": "1.2",
+    "angular-snap": "1.2",
+    "font-awesome": "4",
+    "bootstrap": "3",
+    "fastclick": "1",
+    "overthrow": "0.7"
+  },
+  "resolutions": {
+    "angular": "1.2.29",
+    "angular-route": "1.2"
+  }
+}
