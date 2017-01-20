@@ -1,8 +1,8 @@
 {
-  "appid": "dbevqkplbca6w3macfcuyctc",
-  "appkey": "28e755ff660d309e5ca70d5a674c89ab38e9daea",
-  "apptitle": "Tech Forum Admin App",
+  "appid": "6bakozknvhixyisqt4e5pnvu",
+  "appkey": "243d7b29bec7a4c3abba76876fdd80df0c1ec2a4",
+  "apptitle": "Tech Forum Client App",
   "connectiontag": "0.0.2",
-  "host": "https://mostmark.us.demos.redhatmobile.com",
-  "projectid": "dbevqkklkuzs5bi5abrmjljn"
+  "host": "https://techlab.us.events.redhatmobile.com",
+  "projectid": "6bakozjhs4ynozo6e72vnmxx"
 }
