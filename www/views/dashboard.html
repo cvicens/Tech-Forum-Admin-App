@@ -30,12 +30,17 @@
     <div class="row top-buffer">
     </div>
     <div class="row">
-      <div class="col-sm-12">
-      <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default" ng-click="toogleSourceToBackend()">Backend</button>
-        <button type="button" class="btn btn-default" ng-click="toogleSourceToForms()">Forms</button>
+      <div class="col-sm-6">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary" ng-model="source" btn-radio="'backend'" ng-click="togleSourceToBackend()" checked>Backend</button>
+        <button type="button" class="btn btn-primary" ng-model="source" btn-radio="'forms'" ng-click="togleSourceToForms()">Forms</button>
       </div>
-    </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="alert alert-info" role="alert">
+          <p>Getting data from <b style="font-weight: bold; font-style: italic;">{{source === 'backend' ? 'Backend Service' : 'Forms Submissions'}}</b></p>
+        </div>
+      </div>
     </div>
     <div class="row">
       <div class="col-sm-6">

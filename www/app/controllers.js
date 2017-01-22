@@ -123,19 +123,19 @@ myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
     $scope.pollerInterval = setInterval($scope.listSubmissions, 1000);
 })
 .controller('DashboardCtrl', ['$scope', '$q', 'fhcloud', function($scope, $q, fhcloud) {
-  $scope.backend = false;
+  $scope.source = 'forms';
   $scope.options = {legend: {display: true}};
   $scope.experienciaLabels = ["Excellent", "Good", "Average", "Fair", "Poor"];
   $scope.experienciaData = [];
   $scope.repetirLabels = ["Yes", "No", "I don\'t know"];
   $scope.repetirData = [];
 
-  $scope.toogleSourceToBackend= function () {
-    $scope.backend = true;
+  $scope.togleSourceToBackend= function () {
+    $scope.source = 'backend';
   };
 
-  $scope.toogleSourceToForms= function () {
-    $scope.backend = false;
+  $scope.togleSourceToForms= function () {
+    $scope.source = 'forms';
   };
 
   $scope.listSubmissions = function() {
@@ -196,12 +196,13 @@ myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
       $scope.noticeMessage = "$fh.cloud failed. Error: " + JSON.stringify(err);
     });
 
-    if ($scope.backend) {
+    if ($scope.source === 'backend') {
       fhcloud.cloud('submissions/data', null, defer.resolve, defer.reject);
+    } else if ($scope.source === 'forms')  {
+      fhcloud.cloud('submissions', null, defer.resolve, defer.reject);
     } else {
       fhcloud.cloud('submissions', null, defer.resolve, defer.reject);
     }
-
   };
 
   // Polling submissions!
