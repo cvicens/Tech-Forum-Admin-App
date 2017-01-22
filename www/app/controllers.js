@@ -207,5 +207,7 @@ myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
   };
 
   // Polling submissions!
-  $scope.pollerInterval = setInterval($scope.listSubmissions, 1000);
+  if (!$scope.pollerInterval) {
+    $scope.pollerInterval = setInterval($scope.listSubmissions, 1000);
+  }
 }]);
