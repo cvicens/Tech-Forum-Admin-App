@@ -9,13 +9,13 @@ module.exports = function(grunt) {
       js: {
         files: ['gruntfile.js', 'application.js', 'public/**/*.js'],
         options: {
-          livereload: true
+          livereload: 35731
         }
       },
       html: {
         files: ['public/*.html'],
         options: {
-          livereload: true
+          livereload: 35731
         }
       }
     },
@@ -80,7 +80,7 @@ module.exports = function(grunt) {
         app: 'Google Chrome'
       },
       localCloud: {
-        path: 'http://127.0.0.1:8001?url=http://127.0.0.1:8080',
+        path: 'http://127.0.0.1:8001?url=http://127.0.0.1:8101',
         app: 'Google Chrome'
       },
       liveCloud: {
