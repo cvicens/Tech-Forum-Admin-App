@@ -20,6 +20,14 @@ myApp.config(function($routeProvider) {
             templateUrl: 'views/submissions.html',
             controller: 'MainCtrl'
         })
+        .when('/list', {
+            templateUrl: 'views/list.html',
+            controller: 'DashboardCtrl'
+        })
+        .when('/dashboard', {
+            templateUrl: 'views/dashboard.html',
+            controller: 'DashboardCtrl'
+        })
         .when('/', {
             templateUrl: 'views/dashboard.html',
             controller: 'DashboardCtrl'

@@ -129,6 +129,7 @@ myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
   $scope.experienciaData = [];
   $scope.repetirLabels = ["Yes", "No", "I don\'t know"];
   $scope.repetirData = [];
+  $scope.items = [];
 
   $scope.togleSourceToBackend= function () {
     $scope.source = 'backend';

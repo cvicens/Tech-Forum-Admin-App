@@ -24,7 +24,7 @@
                 <a href="#contact">Contact</a>
             </li>
             <li class="page-scroll">
-                <a href="#list">Go to list</a>
+                <a href="#dashboard">Go to dasboard</a>
             </li>
         </ul>
     </div>
@@ -45,29 +45,33 @@
         </div>
       </div>
     </div>
+
     <div class="row">
-      <div class="col-sm-6">
-        <div class="panel panel-default">
-          <div class="panel-heading">Experience</div>
-          <div class="panel-body">
-            <canvas class="chart chart-pie"
-              chart-data="experienciaData" chart-labels="experienciaLabels" chart-options="options"
-              chart-click="showSubmissions()">
-            </canvas>
-          </div>
+      <div class="col-sm-12">
+        <div class="panel-heading">Submissions</div>
+
+          <!-- Table -->
+          <table class="table">
+            <tr>
+               <th>ID</th>
+               <th>Form Name</th>
+               <th>Experience</th>
+               <th>Repeat</th>
+               <th>Comentarios</th>
+            </tr>
+
+            <tr ng-repeat = "item in items">
+               <td>{{ item._id }}</td>
+               <td>{{ item.formName }}</td>
+               <td>{{ item.experiencia }}</td>
+               <td>{{ item.repetir }}</td>
+               <td>{{ item.comentarios }}</td>
+            </tr>
+          </table>
         </div>
       </div>
-      <div class="col-sm-6">
-        <div class="panel panel-default">
-          <div class="panel-heading">Would you repeat?</div>
-          <div class="panel-body">
-            <canvas class="chart chart-pie"
-              chart-data="repetirData" chart-labels="repetirLabels" chart-options="options">
-            </canvas>
-          </div>
-      </div>
     </div>
-  </div>
+
 </div>
 
 
