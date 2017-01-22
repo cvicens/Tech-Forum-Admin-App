@@ -123,6 +123,7 @@ myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
     $scope.pollerInterval = setInterval($scope.listSubmissions, 1000);
 })
 .controller('DashboardCtrl', ['$scope', '$q', 'fhcloud', function($scope, $q, fhcloud) {
+  $scope.pollerInterval = null;
   $scope.source = 'forms';
   $scope.options = {legend: {display: true}};
   $scope.experienciaLabels = ["Excellent", "Good", "Average", "Fair", "Poor"];
@@ -207,7 +208,7 @@ myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
   };
 
   // Polling submissions!
-  if (!$scope.pollerInterval) {
+  if ($scope.pollerInterval === null) {
     $scope.pollerInterval = setInterval($scope.listSubmissions, 1000);
   }
 }]);
