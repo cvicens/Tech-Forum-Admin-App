@@ -122,7 +122,8 @@ myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
 
     $scope.pollerInterval = setInterval($scope.listSubmissions, 1000);
 })
-.controller('DashboardCtrl', ['$scope', '$q', 'fhcloud', function($scope, $q, fhcloud) {
+.controller('DashboardCtrl', ['$scope', '$interval', '$location', '$q', 'fhcloud', function($scope, $interval, $location, $q, fhcloud) {
+  var stop;
   $scope.pollerInterval = null;
   $scope.source = 'forms';
   $scope.options = {legend: {display: true}};
@@ -138,6 +139,17 @@ myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
 
   $scope.togleSourceToForms= function () {
     $scope.source = 'forms';
+  };
+
+  $scope.goto = function (whereTo) {
+    if (typeof stop !== 'undefined') {
+      //$interval.cancel(stop);
+      clearInterval(stop);
+      stop = undefined;
+    }
+    //$injector.get('$state').transitionTo(whereTo);
+    //$state.go(whereTo, null);
+    $location.path(whereTo);
   };
 
   $scope.listSubmissions = function() {
@@ -207,8 +219,10 @@ myApp.controller('MainCtrl', function($scope, $q, fhcloud) {
     }
   };
 
+  //stop = $interval($scope.listSubmissions, 1000);
+
   // Polling submissions!
-  if ($scope.pollerInterval === null) {
-    $scope.pollerInterval = setInterval($scope.listSubmissions, 1000);
+  if (typeof stop === 'undefined') {
+    stop = setInterval($scope.listSubmissions, 1000);
   }
 }]);
